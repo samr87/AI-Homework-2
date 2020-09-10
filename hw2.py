@@ -23,16 +23,16 @@ class Agent:
             
             direc = d
             
-            if direc == "left" and x > -10:
+            if direc == "left" and self.xPos > -10:
                 self.xPos = self.xPos - 1
                 
-            elif direc == "right" and x < 10: 
+            elif direc == "right" and self.xPos < 10: 
                 self.xPos = self.xPos + 1
                 
-            elif direc == "up" and y < 10:
+            elif direc == "up" and self.yPos < 10:
                 self.yPos = self.yPos + 1
                 
-            elif direc == "down" and x > 10:
+            elif direc == "down" and self.yPos > 10:
                 self.yPos = self.yPos - 1
                 
             else:

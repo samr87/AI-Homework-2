@@ -8,7 +8,7 @@ from hw2 import Agent
 
 def main():
     
-    bot = Agent("bot1", 0, 0)
+    bot = Agent("bot1", 9, 0)
     
     print(bot.getName())
     
@@ -18,6 +18,8 @@ def main():
     bot.move("right")
     
     bot.printLocation()
+    
+    bot.move("right")
     
     
 main()
