@@ -9,8 +9,8 @@ class Agent():
     def getName(self):
         return self.name
     def MoveRandom(self):
-        self.__locationY = randint(0,10)
-        self.__locationX = randint(0,10)
+        self.__locationY = randint(0,9)
+        self.__locationX = randint(0,9)
     def MoveUp(self):
         self.__locationY += 1
     def MoveDown(self):
@@ -23,3 +23,12 @@ class Agent():
         return self.__locationX
     def GetLocationY(self):
         return self.__locationY
+    def Perceive(self,grid):
+        flag = False
+        if grid[self.__locationX][self.__locationY] != 0:
+            flag = True
+        return flag
+    def Clean(self,grid):
+        grid[self.__locationX][self.__locationY] = 0
+    def DoNothing(self):
+        return
