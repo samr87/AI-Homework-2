@@ -2,7 +2,6 @@ from random import randint
 class Agent():
     def __init__ (self,x,y):
         self.name = ""
-        self.__age = randint(0,100)
         self.__locationX = x
         self.__locationY = y 
     def setName(self,n):
