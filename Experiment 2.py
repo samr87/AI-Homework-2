@@ -9,10 +9,11 @@ def main():
         for j in i:
             p += j
     for i in range(0,50):
-        x = roomba.GetLocationX()
-        y = roomba.GetLocationY()
-        if environment[x][y] != 0:
-            environment[x][y] = 0
+        dirty = roomba.Perceive(environment)
+        if dirty:
+            roomba.Clean(environment)
+        else:
+            roomba.DoNothing()
         roomba.MoveRandom()
     pe = 0
     for i in environment:
