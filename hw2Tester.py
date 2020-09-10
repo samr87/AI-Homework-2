@@ -4,6 +4,7 @@ Created on Wed Sep  9 17:08:39 2020
 
 @author: computer realm
 """
+from random import randint
 from hw2 import Agent
 
 def main():
@@ -26,7 +27,7 @@ def main():
     
 def environ():
     
-    grid = [[0] * 10 for _ in range(10)]
+    grid = [[randint(0,1)] * 10 for _ in range(10)]
     
     print(grid)
     
