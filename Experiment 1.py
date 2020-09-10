@@ -2,8 +2,8 @@ from random import randint
 from Agent import Agent
 avg = 0
 def main():
-    roomba = Agent(randint(0,9),randint(0,9))
     environment = [[randint(0,1) for i in range(0,10)] for j in range(0,10)]
+    roomba = Agent(randint(0,9),randint(0,9))
     p = 0
     for i in environment:
         for j in i:
@@ -11,8 +11,11 @@ def main():
     for i in range(0,50):
         x = roomba.GetLocationX()
         y = roomba.GetLocationY()
-        if environment[x][y] != 0:
-            environment[x][y] = 0
+        dirty = roomba.Perceive(environment)
+        if dirty:
+            roomba.Clean(environment)
+        else:
+            roomba.DoNothing()
         if y < 9:
             if environment[x][y+1] != 0:
                 roomba.MoveUp()
