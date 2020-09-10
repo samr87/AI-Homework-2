@@ -1,10 +1,10 @@
 from random import randint
 class Agent():
-    def __init__ (self):
+    def __init__ (self,x,y):
         self.name = ""
         self.__age = randint(0,100)
-        self.__locationX = 0
-        self.__locationY = 0 
+        self.__locationX = x
+        self.__locationY = y 
     def setName(self,n):
         self.name = n
     def getName(self):
