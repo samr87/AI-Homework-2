@@ -1,9 +1,9 @@
 from random import randint
 from Agent import Agent
-environment = [[randint(0,1) for i in range(0,10)] for j in range(0,10)]
 avg = 0
 def main():
     roomba = Agent(randint(0,9),randint(0,9))
+    environment = [[randint(0,1) for i in range(0,10)] for j in range(0,10)]
     p = 0
     for i in environment:
         for j in i:
@@ -22,7 +22,7 @@ def main():
         elif x < 9:
             if environment[x+1][y] != 0:
                 roomba.MoveRight()
-        elif y < 9:
+        elif x > 0:
             if environment[x-1][y] != 0:
                 roomba.MoveLeft()
         else:
