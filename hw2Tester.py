@@ -12,7 +12,6 @@ def main():
     
     print(bot.getName())
     
-    
     bot.printLocation()
     
     bot.move("right")
@@ -21,5 +20,14 @@ def main():
     
     bot.move("right")
     
+    environ()
+    
+    
+    
+def environ():
+    
+    grid = [[0] * 10 for _ in range(10)]
+    
+    print(grid)
     
 main()
