@@ -14,21 +14,25 @@ class Agent:
             self.xPos = x
             self.yPos = y
             
+        def getName(self):
+            
+            return self.name
+            
             
         def move(self,d):
             
             direc = d
             
-            if direc == "left": # && left is not a border
+            if direc == "left" and x > -10:
                 self.xPos = self.xPos - 1
                 
-            elif direc == "right": # && right is not a border
+            elif direc == "right" and x < 10: 
                 self.xPos = self.xPos + 1
                 
-            elif direc == "up": # && up is not a border
+            elif direc == "up" and y < 10:
                 self.yPos = self.yPos + 1
                 
-            elif direc == "down": # && down is not a border
+            elif direc == "down" and x > 10:
                 self.yPos = self.yPos - 1
                 
             else:
@@ -36,7 +40,7 @@ class Agent:
         
         def printLocation(self):
             
-            print("The bot's location is: " + self.xPos + " by " + self.yPos + " on the grid.")
+            print("The bot's location is: " + str(self.xPos) + " by " + str(self.yPos) + " on the grid.")
             
         def retXposition(self):
             
@@ -46,12 +50,11 @@ class Agent:
             
             return self.yPos
         
-        def pickUp():
+        #def pickUp(environ):
             
-            # if environment firty, then suck
+            #if environ == dirty, then pickUp
             
-            # else environment clean, then move or something, idk.
-            
+            #else move            
 #class Environment:
     
     # determines whether a spot is clean or dirty?
